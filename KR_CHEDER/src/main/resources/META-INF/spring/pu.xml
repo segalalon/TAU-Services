@@ -13,7 +13,7 @@
 <!--    <bean class="ModelConfig"/>-->
 
     <!-- Enable Spring component scanning for the specified path -->
-	<context:component-scan base-package="com.gs" />
+	<context:component-scan base-package="com.gs.infra" />
 	
 	<!-- Enable GigaSpaces annotation support -->
 	<os-core:annotation-support/>

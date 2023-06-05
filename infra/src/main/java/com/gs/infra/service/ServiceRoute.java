@@ -6,7 +6,7 @@ import com.gigaspaces.metrics.Gauge;
 import com.gs.infra.ErrorMessage;
 import com.gs.infra.ServiceException;
 import com.gs.infra.health.HealthReporter;
-import com.gs.lib.grid.RefTableCache;
+ import com.gs.lib.grid.RefTableCache;
 import org.openspaces.core.GigaSpace;
 import org.openspaces.pu.container.ProcessingUnitContainerContext;
 import org.openspaces.pu.container.ProcessingUnitContainerContextAware;

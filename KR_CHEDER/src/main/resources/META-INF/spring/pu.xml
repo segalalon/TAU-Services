@@ -10,10 +10,10 @@
     <!-- Note: description is used to infer processing unit type -->
     <description>pu-type=stateless</description>
 
-    <bean class="ModelConfig"/>
+<!--    <bean class="ModelConfig"/>-->
 
     <!-- Enable Spring component scanning for the specified path -->
-	<context:component-scan base-package="com.gs" />
+	<context:component-scan base-package="com.gs.infra" />
 	
 	<!-- Enable GigaSpaces annotation support -->
 	<os-core:annotation-support/>
@@ -50,7 +50,7 @@
     </bean>
 
     <!-- Defines a space proxy-->
-    <os-core:space-proxy id="space" space-name="bllspace"/>
+    <os-core:space-proxy id="space" space-name="dih-tau-space"/>
 
     <!-- Defines a gigaSpace for the space proxy-->
 	<os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager" />

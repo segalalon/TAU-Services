@@ -15,8 +15,8 @@ import static java.lang.String.format;
 
 public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERResponse> implements Task<ArrayList<KR_CHEDERResponse>> {
 
-    private static final Logger logger_gsc = org.slf4j.LoggerFactory.getLogger(KR_CHEDERApiTask.class);
-    private static final Logger logger_service = tau.ods.gs.model.logging.LoggerFactory.getLogger(KR_CHEDERApiTask.class);
+    private static final Logger logger_service = org.slf4j.LoggerFactory.getLogger(KR_CHEDERApiTask.class);
+//    private static final Logger logger_service = tau.ods.gs.model.logging.LoggerFactory.getLogger(KR_CHEDERApiTask.class);
     static private final String type = "STUD.KR_CHEDER";
 
     public ArrayList execute() {
@@ -25,7 +25,6 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
         String query = null;
         String binyan = request.getK_BINYAN();
         String misCheder = request.getK_MIS_CHEDER();
-        String zihuyNosaf = request.getK_ZIHUY_NOSAF();
         String transactionId = request.getTransactionId();
 
         ArrayList responseList = new ArrayList<>();
@@ -37,7 +36,7 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
                     .instantiateHttpRequest()
                     .nullHttpResponse()
                     .nullError()
-                    .setRequestMessage("Query: binyan = " + binyan + " mispar cheder = " + misCheder + " zihuy nosaf " + zihuyNosaf)
+                    .setRequestMessage("Query: binyan = " + binyan + " mispar cheder = " + misCheder)
                     .setLevel(LogMessage.Level.ERROR)
                     .setTimestamp(new Date(System.currentTimeMillis()))
                     .createLogMessage());
@@ -54,14 +53,14 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
 
             return responseList;
 
-        }else if (binyan == null && misCheder != null && zihuyNosaf != null) {
-            responseList.add(new ErrorServiceResponse("Invalid keys", "400", "keys: K_BINYAN - NaN, K_MIS_CHEDER - " + misCheder + "K_ZIHUY_NOSAF = " + zihuyNosaf));
+        }else if (binyan == null && misCheder != null) {
+            responseList.add(new ErrorServiceResponse("Invalid keys", "400", "keys: K_BINYAN - NaN, K_MIS_CHEDER - " + misCheder));
 
             logger_service.error(LogBuilder.get()
                     .instantiateHttpRequest()
                     .nullHttpResponse()
                     .nullError()
-                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder + " zihuyNosaf = " + zihuyNosaf)
+                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder)
                     .setLevel(LogMessage.Level.ERROR)
                     .setTimestamp(new Date(System.currentTimeMillis()))
                     .createLogMessage());
@@ -73,19 +72,19 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
                     .setErrorCode(400)
                     .setLevel(LogMessage.Level.ERROR)
                     .setTimestamp(new Date(System.currentTimeMillis()))
-                    .setErrorMessage("Invalid keys: keys: K_BINYAN - NaN, K_MIS_CHEDER - " + misCheder + "K_ZIHUY_NOSAF = " + zihuyNosaf)
+                    .setErrorMessage("Invalid keys: keys: K_BINYAN - NaN, K_MIS_CHEDER - " + misCheder)
                     .createLogMessage());
 
             return responseList;
 
-        }else if (binyan == null && misCheder == null && zihuyNosaf == null) {
+        }else if (binyan == null && misCheder == null) {
             responseList.add(new ErrorServiceResponse("Invalid keys", "400", "keys: K_BINYAN - NaN, K_MIS_CHEDER - undefined, K_ZIHUY_NOSAF - undefined"));
 
             logger_service.error(LogBuilder.get()
                     .instantiateHttpRequest()
                     .nullHttpResponse()
                     .nullError()
-                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder + " zihuyNosaf = " + zihuyNosaf)
+                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder)
                     .setLevel(LogMessage.Level.ERROR)
                     .setTimestamp(new Date(System.currentTimeMillis()))
                     .createLogMessage());
@@ -109,7 +108,7 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
                     .instantiateHttpRequest()
                     .nullHttpResponse()
                     .nullError()
-                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder + " zihuyNosaf = " + zihuyNosaf)
+                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder)
                     .setLevel(LogMessage.Level.ERROR)
                     .setTimestamp(new Date(System.currentTimeMillis()))
                     .createLogMessage());
@@ -132,7 +131,7 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
                     .instantiateHttpRequest()
                     .nullHttpResponse()
                     .nullError()
-                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder + " zihuyNosaf = " + zihuyNosaf)
+                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder)
                     .setLevel(LogMessage.Level.ERROR)
                     .setTimestamp(new Date(System.currentTimeMillis()))
                     .createLogMessage());
@@ -155,7 +154,7 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
                     .instantiateHttpRequest()
                     .nullHttpResponse()
                     .instantiateError()
-                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder + " zihuyNosaf = " + zihuyNosaf)
+                    .setRequestMessage("Query: binyan = " + binyan + " misCheder = " + misCheder)
                     .setLevel(LogMessage.Level.ERROR)
                     .setTimestamp(new Date(System.currentTimeMillis()))
                     .createLogMessage());
@@ -185,7 +184,7 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
             USECASE_QUERY = "K_BINYAN" + " = %s AND K_MIS_CHEDER = %s AND K_ZIHUY_NOSAF = %s";
 
             query = format(USECASE_QUERY,
-                    request.getK_BINYAN(), request.getK_MIS_CHEDER(), request.getK_ZIHUY_NOSAF());
+                    request.getK_BINYAN(), request.getK_MIS_CHEDER());
         }
 
         SQLQuery<SpaceDocument> sqlQuery = new SQLQuery<>(type, query);

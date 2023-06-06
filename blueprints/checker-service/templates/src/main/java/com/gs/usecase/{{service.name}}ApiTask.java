@@ -2,9 +2,9 @@ package com.gs.usecase;
 
 import org.slf4j.Logger;
 import java.sql.Date;
-import bll.ods.gs.model.logging.LoggerFactory;
-import bll.ods.gs.model.logging.LogBuilder;
-import bll.ods.gs.model.logging.LogMessage;
+import tau.ods.gs.model.logging.LoggerFactory;
+import tau.ods.gs.model.logging.LogBuilder;
+import tau.ods.gs.model.logging.LogMessage;
 import com.gigaspaces.metadata.SpaceTypeDescriptor;
 import org.openspaces.core.GigaSpaceTypeManager;
 import java.util.ArrayList;

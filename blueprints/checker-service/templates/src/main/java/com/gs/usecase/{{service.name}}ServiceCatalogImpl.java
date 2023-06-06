@@ -2,9 +2,9 @@ package com.gs.usecase;
 
 import java.sql.Date;
 import org.slf4j.Logger;
-import bll.ods.gs.model.logging.LoggerFactory;
-import bll.ods.gs.model.logging.LogBuilder;
-import bll.ods.gs.model.logging.LogMessage;
+import tau.ods.gs.model.logging.LoggerFactory;
+import tau.ods.gs.model.logging.LogBuilder;
+import tau.ods.gs.model.logging.LogMessage;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.gs.infra.metadata.ServiceCatalog;

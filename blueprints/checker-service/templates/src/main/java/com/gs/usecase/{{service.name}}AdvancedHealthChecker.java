@@ -2,9 +2,9 @@ package com.gs.usecase;
 
 import org.slf4j.Logger;
 import java.sql.Date;
-import bll.ods.gs.model.logging.LoggerFactory;
-import bll.ods.gs.model.logging.LogBuilder;
-import bll.ods.gs.model.logging.LogMessage;
+import tau.ods.gs.model.logging.LoggerFactory;
+import tau.ods.gs.model.logging.LogBuilder;
+import tau.ods.gs.model.logging.LogMessage;
 import com.gs.infra.health.HealthChecker;
 import org.openspaces.core.GigaSpace;
 import org.springframework.stereotype.Component;
@@ -27,7 +27,7 @@ public class {{service.name}}AdvancedHealthChecker implements HealthChecker {
         .setStatusCode(200)
         .setLevel(LogMessage.Level.INFO)
         .setTimestamp(new Date(System.currentTimeMillis()))
-        .setMessage("going to run health for DB_Central_ForeignCurrencyTable_DKTB614 and verify if type " + type + " exist in bllspace")
+        .setMessage("going to run health for KR_CHEDER and verify if type " + type + " exist in bllspace")
         .createLogMessage());
 
         if (gigaSpace.getTypeManager().getTypeDescriptor(type) == null) {

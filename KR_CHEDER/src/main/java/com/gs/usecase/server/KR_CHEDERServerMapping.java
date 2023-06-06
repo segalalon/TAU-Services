@@ -1,12 +1,11 @@
 package com.gs.usecase.server;
 
 import com.gs.infra.health.HealthReporter;
+import com.gs.infra.server.*;
 import com.gs.usecase.*;
-import com.gs.infra.server.RequestHandler;
-import com.gs.infra.server.ServerMapping;
 import com.gs.infra.service.ServiceRoute;
 import com.gs.infra.metadata.ServiceCatalog;
-// import com.gs.infra.server.SwaggerGenerator;
+import com.gs.infra.server.SwaggerGenerator;
 
 
 public class KR_CHEDERServerMapping extends ServerMapping {
@@ -23,12 +22,9 @@ public class KR_CHEDERServerMapping extends ServerMapping {
 
     @Override
     public String generateSwagger(){
-//        return SwaggerGenerator.generate("KR_CHEDER","KR_CHEDER",getEndpoint(),
-//                                        "KR_CHEDER", port,
-//        KR_CHEDERRequest.class, KR_CHEDERResponse.class);
-
-        //todo change it after getting common
-        return null;
+        return SwaggerGenerator.generate("KR_CHEDER","KR_CHEDER",getEndpoint(),
+                                        "KR_CHEDER", port,
+        KR_CHEDERRequest.class, KR_CHEDERResponse.class);
         }
 
 

@@ -27,15 +27,15 @@ public class {{service.name}}AdvancedHealthChecker implements HealthChecker {
         .setStatusCode(200)
         .setLevel(LogMessage.Level.INFO)
         .setTimestamp(new Date(System.currentTimeMillis()))
-        .setMessage("going to run health for KR_CHEDER and verify if type " + type + " exist in bllspace")
+        .setMessage("going to run health for KR_CHEDER and verify if type " + type + " exist in dih-tau-space")
         .createLogMessage());
 
         if (gigaSpace.getTypeManager().getTypeDescriptor(type) == null) {
-            logger.error("{{service.name}} service is un-health because type " + type + " doesn't exist in bllspace");
+            logger.error("{{service.name}} service is un-health because type " + type + " doesn't exist in dih-tau-space");
 
             return 500;
         }else{
-            logger.info("Type "+type+" exist in bllspace");
+            logger.info("Type "+type+" exist in dih-tau-space");
             return 200;
         }
     }

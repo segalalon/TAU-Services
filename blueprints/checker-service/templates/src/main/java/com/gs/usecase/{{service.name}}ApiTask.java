@@ -35,7 +35,7 @@ public class {{service.name}}ApiTask extends GeneralTask<{{service.name}}Request
         if (spaceTypeDescriptor != null) {
             sqlQuery = new SQLQuery<SpaceDocument>(type,"");
             count = gigaSpace.count(sqlQuery);
-            logger.info("There are " + count + " records of type " + type + " in bllspace");
+            logger.info("There are " + count + " records of type " + type + " in dih-tau-space");
             responseList.add(new {{service.name}}Response(count));
 
             SpaceDocument[] results = gigaSpace.readMultiple(sqlQuery,5);
@@ -44,7 +44,7 @@ public class {{service.name}}ApiTask extends GeneralTask<{{service.name}}Request
             }
 
         }else{
-            logger.error("Ms_int_chk_1001_s{number} service is un-health because type " + type + " doesn't exist in bllspace");
+            logger.error("KR_CHEDER{number} service is un-health because type " + type + " doesn't exist in dih-tau-space");
 
             return null;
         }

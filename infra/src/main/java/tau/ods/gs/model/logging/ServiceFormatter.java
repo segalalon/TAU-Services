@@ -7,7 +7,7 @@ import java.time.ZonedDateTime;
 import java.util.logging.*;
 public class ServiceFormatter extends SimpleFormatter {
     private String format =
-            LogManager.getLogManager().getProperty("bll.ods.gs.model.logging.ServiceFormatter.format");
+            LogManager.getLogManager().getProperty("tau.ods.gs.model.logging.ServiceFormatter.format");
     public void setFormat(String format) {
         this.format = format;
     }

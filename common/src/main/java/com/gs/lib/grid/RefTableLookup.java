@@ -1,7 +1,6 @@
 package com.gs.lib.grid;
 
 import com.gigaspaces.document.SpaceDocument;
-import com.gs.model.JOTBMF02_SEGMENT_Wrapper;
 import com.j_spaces.core.client.SQLQuery;
 import org.openspaces.core.GigaSpace;
 

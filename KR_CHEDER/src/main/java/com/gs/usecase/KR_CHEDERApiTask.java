@@ -101,7 +101,7 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
 
             return responseList;
 
-        }else if (binyan != null && binyan.length() != 2){
+        }else if (binyan != null && binyan.length() != 3){
             responseList.add(new ErrorServiceResponse("Invalid value for: K_BINYAN, format: ^[0-9]{2}$", "400", "K_BINYAN: " + binyan));
 
             logger_service.error(LogBuilder.get()
@@ -181,7 +181,7 @@ public class KR_CHEDERApiTask extends GeneralTask<KR_CHEDERRequest, KR_CHEDERRes
 
         }else {
 
-            USECASE_QUERY = "K_BINYAN" + " = %s AND K_MIS_CHEDER = %s AND K_ZIHUY_NOSAF = %s";
+            USECASE_QUERY = "K_BINYAN" + " = %s AND K_MIS_CHEDER = %s";
 
             query = format(USECASE_QUERY,
                     request.getK_BINYAN(), request.getK_MIS_CHEDER());

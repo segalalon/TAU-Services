@@ -9,6 +9,13 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <repositories>
+        <repository>
+            <id>org.openspaces</id>
+            <url>http://maven-repository.openspaces.org</url>
+        </repository>
+    </repositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -30,9 +37,9 @@
     </dependencies>
 
     <modules>
-        <module>common</module>
+<!--        <module>common</module>-->
         <module>infra</module>
-        <module>KR_CHEDER</module>
+<!--        <module>KR_CHEDER</module>-->
     </modules>
 
     <build>

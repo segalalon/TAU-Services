@@ -25,6 +25,7 @@
         <gs.version>16.3.0</gs.version>
         <slf4j.version>1.7.26</slf4j.version>
         <spring.framework.version>5.3.22</spring.framework.version>
+        <io.swagger.version>1.6.11</io.swagger.version>
     </properties>
 
     <dependencies>
@@ -37,9 +38,9 @@
     </dependencies>
 
     <modules>
-<!--        <module>common</module>-->
+        <module>common</module>
         <module>infra</module>
-<!--        <module>KR_CHEDER</module>-->
+        <module>KR_CHEDER</module>
     </modules>
 
     <build>

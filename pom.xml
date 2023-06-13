@@ -59,6 +59,9 @@
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.0</version>
+                    <configuration>
+                      <release>${maven.compiler.target}</release>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
@@ -80,9 +83,6 @@
                 <plugin>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>3.0.0</version>
-                    <configuration>
-                      <release>${maven.compiler.target}</release>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
